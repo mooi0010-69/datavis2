@@ -1,0 +1,43 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Pie chart showing gender distribution of crimes in Australia with percentage tooltip and custom colors",
+  "width": 400,
+  "height": 400,
+  "data": {
+    "url": "https://raw.githubusercontent.com/mooi0010-69/datavis2/refs/heads/main/cleaned_data/total_crimes_gender.csv"
+  },
+  "transform": [
+    {
+      "joinaggregate": [
+        {
+          "op": "sum",
+          "field": "Crimes",
+          "as": "TotalCrimes"
+        }
+      ]
+    },
+    {
+      "calculate": "datum.Crimes / datum.TotalCrimes", //percentage
+      "as": "Percentage"
+    }
+  ],
+  "mark": {"type": "arc"},
+  "encoding": {
+    "theta": {"field": "Crimes", "type": "quantitative"},
+    "color": {
+      "field": "Gender",
+      "type": "nominal",
+      "scale": {
+        "domain": ["Male", "Female"],
+        "range": ["#9DCAEB", "#FBB4B4"]  
+      },
+      "legend": {"title": "Gender"}
+    },
+    "tooltip": [
+      {"field": "Gender", "type": "nominal"},
+      {"field": "Crimes", "type": "quantitative", "format": ","},
+      {"field": "Percentage", "type": "quantitative", "format": ".1%"}
+    ]
+  },
+  "view": {"stroke": null}
+}
