@@ -1,9 +1,9 @@
-STATE_NAME,Population
-New South Wales,8541186
-Victoria,7007650
-Queensland,5619059
-South Australia,1891270
-Western Australia,3009399
-Tasmania,575481
-Northern Territory,262254
-Australian Capital Territory,481344
+State,Population,STATE_CODE
+New South Wales,8541186,1
+Victoria,7007650,2
+Queensland,5619059,3
+South Australia,1891270,4
+Western Australia,3009399,5
+Tasmania,575481,6
+Northern Territory,262254,7
+Australian Capital Territory,481344,8
