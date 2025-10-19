@@ -3,8 +3,8 @@
   "description": "Side-by-side comparison of female and male population with crime counts by state.",
   "hconcat": [
     {
-      "width": 300,
-      "height": 400,
+      "width": 200,
+      "height": 350,
       "title": {
         "text": "Female Population and Crime Counts",
         "anchor": "start",
@@ -70,8 +70,8 @@
       "resolve": {"scale": {"y": "independent"}}
     },
     {
-      "width": 300,
-      "height": 400,
+      "width": 200,
+      "height": 350,
       "title": {
         "text": "Male Population and Crime Counts",
         "anchor": "start",
@@ -142,3 +142,4 @@
     "legend": {"labelFontSize": 10, "titleFontSize": 12}
   }
 }
+
