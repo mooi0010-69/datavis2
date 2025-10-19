@@ -1,0 +1,289 @@
+Offences,State,Gender,Count
+Abduction/harassment,cap,Female,4
+Abduction/harassment,cap,Male,43
+Abduction/harassment,north,Female,9
+Abduction/harassment,north,Male,52
+Abduction/harassment,nsw,Female,221
+Abduction/harassment,nsw,Male,854
+Abduction/harassment,queens,Female,9
+Abduction/harassment,queens,Male,52
+Abduction/harassment,south,Female,17
+Abduction/harassment,south,Male,105
+Abduction/harassment,tas,Female,0
+Abduction/harassment,tas,Male,11
+Abduction/harassment,total,female,707
+Abduction/harassment,total,male,2984
+Abduction/harassment,vic,Female,194
+Abduction/harassment,vic,Male,807
+Abduction/harassment,west,Female,253
+Abduction/harassment,west,Male,1060
+Acts intended to cause injury,cap,Female,247
+Acts intended to cause injury,cap,Male,669
+Acts intended to cause injury,north,Female,630
+Acts intended to cause injury,north,Male,2072
+Acts intended to cause injury,nsw,Female,10207
+Acts intended to cause injury,nsw,Male,28226
+Acts intended to cause injury,queens,Female,4214
+Acts intended to cause injury,queens,Male,10207
+Acts intended to cause injury,south,Female,1358
+Acts intended to cause injury,south,Male,4517
+Acts intended to cause injury,tas,Female,631
+Acts intended to cause injury,tas,Male,1564
+Acts intended to cause injury,total,female,23970
+Acts intended to cause injury,total,male,68191
+Acts intended to cause injury,vic,Female,3930
+Acts intended to cause injury,vic,Male,13641
+Acts intended to cause injury,west,Female,2753
+Acts intended to cause injury,west,Male,7295
+Dangerous/negligent acts,cap,Female,4
+Dangerous/negligent acts,cap,Male,5
+Dangerous/negligent acts,north,Female,10
+Dangerous/negligent acts,north,Male,42
+Dangerous/negligent acts,nsw,Female,18
+Dangerous/negligent acts,nsw,Male,66
+Dangerous/negligent acts,queens,Female,215
+Dangerous/negligent acts,queens,Male,665
+Dangerous/negligent acts,south,Female,12
+Dangerous/negligent acts,south,Male,26
+Dangerous/negligent acts,tas,Female,0
+Dangerous/negligent acts,tas,Male,4
+Dangerous/negligent acts,total,female,402
+Dangerous/negligent acts,total,male,1608
+Dangerous/negligent acts,vic,Female,100
+Dangerous/negligent acts,vic,Male,675
+Dangerous/negligent acts,west,Female,43
+Dangerous/negligent acts,west,Male,125
+Fare evasion,cap,Female,0
+Fare evasion,cap,Male,0
+Fare evasion,north,Female,0
+Fare evasion,north,Male,0
+Fare evasion,nsw,Female,5426
+Fare evasion,nsw,Male,14551
+Fare evasion,queens,Female,52
+Fare evasion,queens,Male,170
+Fare evasion,south,Female,39
+Fare evasion,south,Male,143
+Fare evasion,tas,Female,0
+Fare evasion,tas,Male,0
+Fare evasion,total,female,5697
+Fare evasion,total,male,15785
+Fare evasion,vic,Female,180
+Fare evasion,vic,Male,921
+Fare evasion,west,Female,0
+Fare evasion,west,Male,0
+Fraud/deception,cap,Female,17
+Fraud/deception,cap,Male,35
+Fraud/deception,north,Female,17
+Fraud/deception,north,Male,17
+Fraud/deception,nsw,Female,886
+Fraud/deception,nsw,Male,1932
+Fraud/deception,queens,Female,649
+Fraud/deception,queens,Male,1037
+Fraud/deception,south,Female,37
+Fraud/deception,south,Male,79
+Fraud/deception,tas,Female,93
+Fraud/deception,tas,Male,140
+Fraud/deception,total,female,2950
+Fraud/deception,total,male,5674
+Fraud/deception,vic,Female,668
+Fraud/deception,vic,Male,1519
+Fraud/deception,west,Female,583
+Fraud/deception,west,Male,915
+Homicide and related offences,cap,Female,0
+Homicide and related offences,cap,Male,11
+Homicide and related offences,north,Female,0
+Homicide and related offences,north,Male,16
+Homicide and related offences,nsw,Female,36
+Homicide and related offences,nsw,Male,226
+Homicide and related offences,queens,Female,24
+Homicide and related offences,queens,Male,103
+Homicide and related offences,south,Female,3
+Homicide and related offences,south,Male,15
+Homicide and related offences,tas,Female,0
+Homicide and related offences,tas,Male,13
+Homicide and related offences,total,female,93
+Homicide and related offences,total,male,569
+Homicide and related offences,vic,Female,13
+Homicide and related offences,vic,Male,110
+Homicide and related offences,west,Female,17
+Homicide and related offences,west,Male,75
+Illicit drug offences,cap,Female,38
+Illicit drug offences,cap,Male,217
+Illicit drug offences,north,Female,278
+Illicit drug offences,north,Male,592
+Illicit drug offences,nsw,Female,2213
+Illicit drug offences,nsw,Male,8760
+Illicit drug offences,queens,Female,4127
+Illicit drug offences,queens,Male,10124
+Illicit drug offences,south,Female,1927
+Illicit drug offences,south,Male,5911
+Illicit drug offences,tas,Female,227
+Illicit drug offences,tas,Male,612
+Illicit drug offences,total,female,12350
+Illicit drug offences,total,male,35815
+Illicit drug offences,vic,Female,1852
+Illicit drug offences,vic,Male,5625
+Illicit drug offences,west,Female,1688
+Illicit drug offences,west,Male,3974
+Miscellaneous offences,cap,Female,3
+Miscellaneous offences,cap,Male,28
+Miscellaneous offences,north,Female,19
+Miscellaneous offences,north,Male,64
+Miscellaneous offences,nsw,Female,468
+Miscellaneous offences,nsw,Male,4377
+Miscellaneous offences,queens,Female,73
+Miscellaneous offences,queens,Male,126
+Miscellaneous offences,south,Female,112
+Miscellaneous offences,south,Male,483
+Miscellaneous offences,tas,Female,64
+Miscellaneous offences,tas,Male,520
+Miscellaneous offences,total,female,1293
+Miscellaneous offences,total,male,8542
+Miscellaneous offences,vic,Female,433
+Miscellaneous offences,vic,Male,2644
+Miscellaneous offences,west,Female,121
+Miscellaneous offences,west,Male,300
+Offences against justice,cap,Female,44
+Offences against justice,cap,Male,200
+Offences against justice,north,Female,247
+Offences against justice,north,Male,813
+Offences against justice,nsw,Female,1293
+Offences against justice,nsw,Male,4491
+Offences against justice,queens,Female,2350
+Offences against justice,queens,Male,9585
+Offences against justice,south,Female,236
+Offences against justice,south,Male,971
+Offences against justice,tas,Female,147
+Offences against justice,tas,Male,544
+Offences against justice,total,female,6477
+Offences against justice,total,male,24599
+Offences against justice,vic,Female,1119
+Offences against justice,vic,Male,4623
+Offences against justice,west,Female,1041
+Offences against justice,west,Male,3372
+Property damage and environmental pollution,cap,Female,27
+Property damage and environmental pollution,cap,Male,88
+Property damage and environmental pollution,north,Female,67
+Property damage and environmental pollution,north,Male,129
+Property damage and environmental pollution,nsw,Female,881
+Property damage and environmental pollution,nsw,Male,2821
+Property damage and environmental pollution,queens,Female,785
+Property damage and environmental pollution,queens,Male,2998
+Property damage and environmental pollution,south,Female,162
+Property damage and environmental pollution,south,Male,485
+Property damage and environmental pollution,tas,Female,104
+Property damage and environmental pollution,tas,Male,357
+Property damage and environmental pollution,total,female,3094
+Property damage and environmental pollution,total,male,10480
+Property damage and environmental pollution,vic,Female,654
+Property damage and environmental pollution,vic,Male,2351
+Property damage and environmental pollution,west,Female,414
+Property damage and environmental pollution,west,Male,1251
+Public order offences,cap,Female,63
+Public order offences,cap,Male,193
+Public order offences,north,Female,997
+Public order offences,north,Male,1448
+Public order offences,nsw,Female,2173
+Public order offences,nsw,Male,7372
+Public order offences,queens,Female,2236
+Public order offences,queens,Male,7268
+Public order offences,south,Female,1059
+Public order offences,south,Male,2690
+Public order offences,tas,Female,205
+Public order offences,tas,Male,527
+Public order offences,total,female,8055
+Public order offences,total,male,24135
+Public order offences,vic,Female,584
+Public order offences,vic,Male,2746
+Public order offences,west,Female,738
+Public order offences,west,Male,1891
+Robbery/extortion,cap,Female,6
+Robbery/extortion,cap,Male,33
+Robbery/extortion,north,Female,48
+Robbery/extortion,north,Male,130
+Robbery/extortion,nsw,Female,108
+Robbery/extortion,nsw,Male,639
+Robbery/extortion,queens,Female,277
+Robbery/extortion,queens,Male,925
+Robbery/extortion,south,Female,45
+Robbery/extortion,south,Male,144
+Robbery/extortion,tas,Female,31
+Robbery/extortion,tas,Male,95
+Robbery/extortion,total,female,771
+Robbery/extortion,total,male,3209
+Robbery/extortion,vic,Female,90
+Robbery/extortion,vic,Male,616
+Robbery/extortion,west,Female,166
+Robbery/extortion,west,Male,627
+Sexual assault and related offences,cap,Female,3
+Sexual assault and related offences,cap,Male,130
+Sexual assault and related offences,north,Female,0
+Sexual assault and related offences,north,Male,65
+Sexual assault and related offences,nsw,Female,179
+Sexual assault and related offences,nsw,Male,2691
+Sexual assault and related offences,queens,Female,269
+Sexual assault and related offences,queens,Male,2493
+Sexual assault and related offences,south,Female,22
+Sexual assault and related offences,south,Male,394
+Sexual assault and related offences,tas,Female,6
+Sexual assault and related offences,tas,Male,125
+Sexual assault and related offences,total,female,678
+Sexual assault and related offences,total,male,8892
+Sexual assault and related offences,vic,Female,115
+Sexual assault and related offences,vic,Male,1649
+Sexual assault and related offences,west,Female,84
+Sexual assault and related offences,west,Male,1345
+Theft,cap,Female,60
+Theft,cap,Male,145
+Theft,north,Female,74
+Theft,north,Male,201
+Theft,nsw,Female,3193
+Theft,nsw,Male,5220
+Theft,queens,Female,4740
+Theft,queens,Male,6563
+Theft,south,Female,588
+Theft,south,Male,951
+Theft,tas,Female,420
+Theft,tas,Male,539
+Theft,total,female,14233
+Theft,total,male,20634
+Theft,vic,Female,2812
+Theft,vic,Male,4217
+Theft,west,Female,2346
+Theft,west,Male,2798
+Unlawful entry with intent,cap,Female,14
+Unlawful entry with intent,cap,Male,80
+Unlawful entry with intent,north,Female,59
+Unlawful entry with intent,north,Male,251
+Unlawful entry with intent,nsw,Female,337
+Unlawful entry with intent,nsw,Male,1674
+Unlawful entry with intent,queens,Female,773
+Unlawful entry with intent,queens,Male,3053
+Unlawful entry with intent,south,Female,172
+Unlawful entry with intent,south,Male,738
+Unlawful entry with intent,tas,Female,28
+Unlawful entry with intent,tas,Male,136
+Unlawful entry with intent,total,female,2194
+Unlawful entry with intent,total,male,8871
+Unlawful entry with intent,vic,Female,338
+Unlawful entry with intent,vic,Male,1274
+Unlawful entry with intent,west,Female,473
+Unlawful entry with intent,west,Male,1665
+Weapons/explosives,cap,Female,22
+Weapons/explosives,cap,Male,111
+Weapons/explosives,north,Female,47
+Weapons/explosives,north,Male,291
+Weapons/explosives,nsw,Female,527
+Weapons/explosives,nsw,Male,3461
+Weapons/explosives,queens,Female,334
+Weapons/explosives,queens,Male,1602
+Weapons/explosives,south,Female,177
+Weapons/explosives,south,Male,1084
+Weapons/explosives,tas,Female,81
+Weapons/explosives,tas,Male,374
+Weapons/explosives,total,female,2176
+Weapons/explosives,total,male,12626
+Weapons/explosives,vic,Female,716
+Weapons/explosives,vic,Male,4320
+Weapons/explosives,west,Female,272
+Weapons/explosives,west,Male,1383
