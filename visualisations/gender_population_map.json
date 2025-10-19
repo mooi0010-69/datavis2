@@ -7,8 +7,8 @@
     "fontWeight": "bold",
     "dy": -10
   },
-  "width": 800,
-  "height": 800,
+  "width": 450,
+  "height": 450,
   "data": {
     "url": "https://raw.githubusercontent.com/mooi0010-69/datavis2/refs/heads/main/cleaned_data/map.json",
     "format": {"type": "topojson", "feature": "LGA_2023_AUST_GDA94"}
@@ -104,3 +104,4 @@
   },
   "config": {"view": {"stroke": "transparent"}}
 }
+
