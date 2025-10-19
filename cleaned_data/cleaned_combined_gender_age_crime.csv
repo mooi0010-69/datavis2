@@ -1,0 +1,209 @@
+Age,State,Gender,Crimes
+10–14 years,New South Wales,Female,2054
+10–14 years,Victoria,Female,972
+10–14 years,Queensland,Female,1519
+10–14 years,South Australia,Female,190
+10–14 years,Western Australia,Female,981
+10–14 years,Tasmania,Female,143
+10–14 years,Northern Territory,Female,101
+10–14 years,Australian Capital Territory,Female,44
+15–17 years,New South Wales,Female,3542
+15–17 years,Victoria,Female,1389
+15–17 years,Queensland,Female,1903
+15–17 years,South Australia,Female,351
+15–17 years,Western Australia,Female,909
+15–17 years,Tasmania,Female,220
+15–17 years,Northern Territory,Female,122
+15–17 years,Australian Capital Territory,Female,62
+18–19 years,New South Wales,Female,1645
+18–19 years,Victoria,Female,581
+18–19 years,Queensland,Female,1307
+18–19 years,South Australia,Female,226
+18–19 years,Western Australia,Female,531
+18–19 years,Tasmania,Female,118
+18–19 years,Northern Territory,Female,138
+18–19 years,Australian Capital Territory,Female,38
+20–24 years,New South Wales,Female,3587
+20–24 years,Victoria,Female,1591
+20–24 years,Queensland,Female,2812
+20–24 years,South Australia,Female,638
+20–24 years,Western Australia,Female,1290
+20–24 years,Tasmania,Female,246
+20–24 years,Northern Territory,Female,328
+20–24 years,Australian Capital Territory,Female,74
+25–29 years,New South Wales,Female,3214
+25–29 years,Victoria,Female,1707
+25–29 years,Queensland,Female,2725
+25–29 years,South Australia,Female,808
+25–29 years,Western Australia,Female,1379
+25–29 years,Tasmania,Female,254
+25–29 years,Northern Territory,Female,378
+25–29 years,Australian Capital Territory,Female,67
+30–34 years,New South Wales,Female,3171
+30–34 years,Victoria,Female,1835
+30–34 years,Queensland,Female,2794
+30–34 years,South Australia,Female,900
+30–34 years,Western Australia,Female,1522
+30–34 years,Tasmania,Female,257
+30–34 years,Northern Territory,Female,398
+30–34 years,Australian Capital Territory,Female,78
+35–39 years,New South Wales,Female,2948
+35–39 years,Victoria,Female,1545
+35–39 years,Queensland,Female,2529
+35–39 years,South Australia,Female,936
+35–39 years,Western Australia,Female,1441
+35–39 years,Tasmania,Female,229
+35–39 years,Northern Territory,Female,348
+35–39 years,Australian Capital Territory,Female,71
+40–44 years,New South Wales,Female,2660
+40–44 years,Victoria,Female,1407
+40–44 years,Queensland,Female,2201
+40–44 years,South Australia,Female,706
+40–44 years,Western Australia,Female,1101
+40–44 years,Tasmania,Female,196
+40–44 years,Northern Territory,Female,256
+40–44 years,Australian Capital Territory,Female,39
+45–49 years,New South Wales,Female,1956
+45–49 years,Victoria,Female,1075
+45–49 years,Queensland,Female,1543
+45–49 years,South Australia,Female,517
+45–49 years,Western Australia,Female,834
+45–49 years,Tasmania,Female,133
+45–49 years,Northern Territory,Female,176
+45–49 years,Australian Capital Territory,Female,30
+50–54 years,New South Wales,Female,1538
+50–54 years,Victoria,Female,775
+50–54 years,Queensland,Female,1106
+50–54 years,South Australia,Female,362
+50–54 years,Western Australia,Female,560
+50–54 years,Tasmania,Female,94
+50–54 years,Northern Territory,Female,122
+50–54 years,Australian Capital Territory,Female,25
+55–59 years,New South Wales,Female,851
+55–59 years,Victoria,Female,448
+55–59 years,Queensland,Female,520
+55–59 years,South Australia,Female,175
+55–59 years,Western Australia,Female,254
+55–59 years,Tasmania,Female,62
+55–59 years,Northern Territory,Female,64
+55–59 years,Australian Capital Territory,Female,14
+60–64 years,New South Wales,Female,486
+60–64 years,Victoria,Female,219
+60–64 years,Queensland,Female,306
+60–64 years,South Australia,Female,77
+60–64 years,Western Australia,Female,115
+60–64 years,Tasmania,Female,36
+60–64 years,Northern Territory,Female,30
+60–64 years,Australian Capital Territory,Female,9
+65 years and over,New South Wales,Female,520
+65 years and over,Victoria,Female,259
+65 years and over,Queensland,Female,348
+65 years and over,South Australia,Female,62
+65 years and over,Western Australia,Female,91
+65 years and over,Tasmania,Female,46
+65 years and over,Northern Territory,Female,24
+65 years and over,Australian Capital Territory,Female,5
+10–14 years,New South Wales,Male,3636
+10–14 years,Victoria,Male,1735
+10–14 years,Queensland,Male,2591
+10–14 years,South Australia,Male,425
+10–14 years,Western Australia,Male,1915
+10–14 years,Tasmania,Male,254
+10–14 years,Northern Territory,Male,203
+10–14 years,Australian Capital Territory,Male,77
+15–17 years,New South Wales,Male,8889
+15–17 years,Victoria,Male,4055
+15–17 years,Queensland,Male,4527
+15–17 years,South Australia,Male,850
+15–17 years,Western Australia,Male,2069
+15–17 years,Tasmania,Male,389
+15–17 years,Northern Territory,Male,347
+15–17 years,Australian Capital Territory,Male,157
+18–19 years,New South Wales,Male,4932
+18–19 years,Victoria,Male,2186
+18–19 years,Queensland,Male,3798
+18–19 years,South Australia,Male,785
+18–19 years,Western Australia,Male,1444
+18–19 years,Tasmania,Male,332
+18–19 years,Northern Territory,Male,343
+18–19 years,Australian Capital Territory,Male,96
+20–24 years,New South Wales,Male,10899
+20–24 years,Victoria,Male,5386
+20–24 years,Queensland,Male,7841
+20–24 years,South Australia,Male,1948
+20–24 years,Western Australia,Male,3159
+20–24 years,Tasmania,Male,682
+20–24 years,Northern Territory,Male,978
+20–24 years,Australian Capital Territory,Male,290
+25–29 years,New South Wales,Male,10823
+25–29 years,Victoria,Male,5811
+25–29 years,Queensland,Male,7625
+25–29 years,South Australia,Male,2259
+25–29 years,Western Australia,Male,3513
+25–29 years,Tasmania,Male,701
+25–29 years,Northern Territory,Male,933
+25–29 years,Australian Capital Territory,Male,258
+30–34 years,New South Wales,Male,10016
+30–34 years,Victoria,Male,6299
+30–34 years,Queensland,Male,7395
+30–34 years,South Australia,Male,2630
+30–34 years,Western Australia,Male,3694
+30–34 years,Tasmania,Male,727
+30–34 years,Northern Territory,Male,873
+30–34 years,Australian Capital Territory,Male,288
+35–39 years,New South Wales,Male,9380
+35–39 years,Victoria,Male,5980
+35–39 years,Queensland,Male,6835
+35–39 years,South Australia,Male,2512
+35–39 years,Western Australia,Male,3631
+35–39 years,Tasmania,Male,666
+35–39 years,Northern Territory,Male,754
+35–39 years,Australian Capital Territory,Male,255
+40–44 years,New South Wales,Male,8731
+40–44 years,Victoria,Male,5381
+40–44 years,Queensland,Male,6140
+40–44 years,South Australia,Male,2297
+40–44 years,Western Australia,Male,3028
+40–44 years,Tasmania,Male,530
+40–44 years,Northern Territory,Male,639
+40–44 years,Australian Capital Territory,Male,193
+45–49 years,New South Wales,Male,6851
+45–49 years,Victoria,Male,3984
+45–49 years,Queensland,Male,4540
+45–49 years,South Australia,Male,1886
+45–49 years,Western Australia,Male,2219
+45–49 years,Tasmania,Male,407
+45–49 years,Northern Territory,Male,471
+45–49 years,Australian Capital Territory,Male,147
+50–54 years,New South Wales,Male,5501
+50–54 years,Victoria,Male,3017
+50–54 years,Queensland,Male,3229
+50–54 years,South Australia,Male,1477
+50–54 years,Western Australia,Male,1620
+50–54 years,Tasmania,Male,329
+50–54 years,Northern Territory,Male,311
+50–54 years,Australian Capital Territory,Male,103
+55–59 years,New South Wales,Male,3392
+55–59 years,Victoria,Male,1789
+55–59 years,Queensland,Male,1794
+55–59 years,South Australia,Male,831
+55–59 years,Western Australia,Male,892
+55–59 years,Tasmania,Male,198
+55–59 years,Northern Territory,Male,191
+55–59 years,Australian Capital Territory,Male,48
+60–64 years,New South Wales,Male,2048
+60–64 years,Victoria,Male,1005
+60–64 years,Queensland,Male,1062
+60–64 years,South Australia,Male,446
+60–64 years,Western Australia,Male,468
+60–64 years,Tasmania,Male,154
+60–64 years,Northern Territory,Male,80
+60–64 years,Australian Capital Territory,Male,24
+65 years and over,New South Wales,Male,2362
+65 years and over,Victoria,Male,1111
+65 years and over,Queensland,Male,1252
+65 years and over,South Australia,Male,408
+65 years and over,Western Australia,Male,446
+65 years and over,Tasmania,Male,191
+65 years and over,Northern Territory,Male,60
+65 years and over,Australian Capital Territory,Male,30
