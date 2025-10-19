@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crimes and Population in Australia (2024)</title>
+  <!-- Vega & Vega-Lite -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+  <style>
+    body, h1, h2, h3, p {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    body {
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+    }
+    .container {
+      max-width: 1000px;
+      padding: 20px;
+      background-color: #ffffff;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      margin: 40px 0;
+      border-radius: 8px;
+    }
+    h1, h2, h3 {
+      text-align: left;
+      margin: 0 0 10px 0;
+    }
+    p.description {
+      text-align: left;
+      font-size: 16px;
+      color: #555;
+      margin-bottom: 30px;
+    }
+
+    .grid_top {
+      display: grid;
+      grid-template-columns: 1fr auto; 
+      align-items: center;
+      gap: 20px;
+    }
+    .grid_top h1 {
+      white-space: nowrap; 
+      font-size: 40px;
+    }
+    .grid_top img {
+      max-height: 100px;
+      width: auto;
+      justify-self: end; 
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 30% 70%;
+      gap: 20px;
+      margin-bottom: 50px;
+      align-items: start;
+    }
+    .grid-full {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+    .text-cell {
+      font-size: 14px;
+      color: #333;
+      text-align: left;
+    }
+    .chart-cell {
+      text-align: center;
+    }
+    .chart {
+      width: 100%;
+      max-width: 600px;
+      height: 500px;
+      margin: 0 auto;
+    }
+    #map {
+      max-width: 800px;
+    }
+    @media (max-width: 900px) {
+      .grid, .grid_top {
+        grid-template-columns: 1fr;
+      }
+      .chart, #map {
+        max-width: 100%;
+      }
+      .grid_top img {
+        justify-self: start;
+        margin-top: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <!-- Title + Image -->
+  <div class="grid_top">
+    <h1>Crimes and Population in Australia (2024)</h1>
+    <img src="https://raw.githubusercontent.com/mooi0010-69/datavis2/main/decorations/img2.png" 
+         alt="Decoration"
+         style="position: absolute; top: 40px; left: 1170px; max-height: 150px; width: auto;">
+  </div>
+
+  <!-- Description below -->
+  <div class="grid_top">
+    <p class="description">
+      An overview of crime distribution and population by state, gender, and age group in Australia.
+    </p>
+  </div>
+
+  <!-- Section 1: Map -->
+<h2>Overview Map</h2>
+<div class="grid">
+  <div class="text-cell" style="position: relative;">
+    <p>
+      Provides a spatial overview of Australia. Quickly see which states have higher populations or crime numbers. Use the dropdown to toggle metrics between total population and total crimes.
+    </p>
+    <img src="https://raw.githubusercontent.com/mooi0010-69/datavis2/main/decorations/img1.png"
+         alt="Decoration"
+         style="position: absolute; top: 300px; left: 0; max-height: 150px; width: auto;">
+  </div>
+  <div class="chart-cell"><div id="map" class="chart"></div></div>
+</div>
+
+
+  <!-- Section 2: Gender Analysis -->
+  <h2>Gender Analysis</h2>
+  <div class="grid-full">
+    <div class="text-cell">
+      <p>Comparison of crimes committed by males and females across states and offences.</p>
+    </div>
+  </div>
+
+  <div class="grid-full">
+    <div class="chart-cell"><div id="chart1" class="chart"></div></div>
+  </div>
+
+  <div class="grid">
+    <div class="text-cell">
+      <p>This chart shows the comparison of male and female crimes by different offences for each state.</p>
+    </div>
+    <div class="chart-cell"><div id="chart2" class="chart"></div></div>
+  </div>
+
+  <!-- Section 3: Age Analysis -->
+<h2>Age Analysis</h2>
+<div class="grid" style="grid-template-columns: 60% 40%; align-items: start;">
+  <div class="chart-cell"><div id="chart3" class="chart"></div></div>
+  
+  <div class="text-cell" style="max-width: 300px; position: relative;">
+    <p>
+      This chart shows the distribution of crimes by age group for both males and females. 
+      It helps identify which age groups are most involved in or affected by crimes across Australia.
+    </p>
+        <img src="https://raw.githubusercontent.com/mooi0010-69/datavis2/main/decorations/img3.png" 
+            alt="Decoration" 
+            style="position: absolute; top: 300px; right: 0; max-height: 150px; width: auto;">
+  </div>
+</div>
+
+
+  <!-- Section 4: Summary / Comparison -->
+  <h2>Summary & Comparative Insights</h2>
+  <div class="grid">
+    <div class="text-cell">
+      <p>
+        This bubble chart shows male vs female population per state, sized by<br>
+        total crimes. Quickly compare overall gender-based crime patterns across states.
+      </p>
+    </div>
+    <div class="chart-cell"><div id="chart4" class="chart"></div></div>
+  </div>
+
+  <h3>Treemap: Crimes by State & Category</h3>
+  <div class="grid">
+    <div class="chart-cell"><div id="chart5" class="chart"></div></div>
+    <div class="text-cell">
+      <p>This treemap shows crime counts per state by category. Use it to see which offences dominate each state and compare totals visually.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Embed all Vega-Lite visualizations
+  vegaEmbed('#map', 'https://raw.githubusercontent.com/mooi0010-69/datavis2/refs/heads/main/visualisations/gender_population_map.json', { actions: false }).catch(console.error);
+  vegaEmbed('#chart1', 'https://raw.githubusercontent.com/mooi0010-69/datavis2/refs/heads/main/visualisations/total_gender_pie.json', { actions: false }).catch(console.error);
+  vegaEmbed('#chart2', 'https://raw.githubusercontent.com/mooi0010-69/datavis2/refs/heads/main/visualisations/offence_compare_gender_barchart.json', { actions: false }).catch(console.error);
+  vegaEmbed('#chart3', 'https://raw.githubusercontent.com/mooi0010-69/datavis2/refs/heads/main/visualisations/gender_crime_age.json', { actions: false }).catch(console.error);
+  vegaEmbed('#chart4', 'https://raw.githubusercontent.com/mooi0010-69/datavis2/refs/heads/main/visualisations/type_crime_perstate_heatmap.json', { actions: false }).catch(console.error);
+  vegaEmbed('#chart5', 'https://raw.githubusercontent.com/mooi0010-69/datavis2/refs/heads/main/visualisations/treemap.json', { actions: false }).catch(console.error);
+</script>
+
+</body>
+</html>
