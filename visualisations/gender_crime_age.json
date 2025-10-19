@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Grouped bar chart comparing male and female crimes by age group, selectable by state, with gender filter.",
   "title": {
-    "text": "Comparison of Male and Female Crimes by Age Group and State (Australia)",
+    "text": "Comparison of Male and Female Crimes by Age Group & State",
     "anchor": "start",
     "fontSize": 18,
     "fontWeight": "bold"
@@ -79,4 +79,3 @@
     ]
   }
 }
-
