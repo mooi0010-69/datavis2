@@ -4,11 +4,19 @@
   "height": 800,
   "data": {
     "url": "https://raw.githubusercontent.com/mooi0010-69/datavis2/refs/heads/main/cleaned_data/map.json",
-    "format": {
-      "type": "topojson",
-      "feature": "LGA_2023_AUST_GDA94"
-    }
+    "format": {"type": "topojson", "feature": "LGA_2023_AUST_GDA94"}
   },
+  "params": [
+    {
+      "name": "display_metric",
+      "value": "Population",
+      "bind": {
+        "input": "select",
+        "options": ["Population", "total crimes"],
+        "name": "Select Metric: "
+      }
+    }
+  ],
   "transform": [
     {
       "lookup": "properties.STE_CODE21",
@@ -39,26 +47,53 @@
         "key": "STATE_CODE",
         "fields": ["Male_Population"]
       }
+    },
+    {
+      "lookup": "properties.STE_NAME21",
+      "from": {
+        "data": {
+          "url": "https://raw.githubusercontent.com/mooi0010-69/datavis2/refs/heads/main/cleaned_data/state_total_crime.csv"
+        },
+        "key": "State",
+        "fields": ["total crimes"]
+      }
+    },
+    {
+      "calculate": "replace(datum['total crimes'], ',', '')",
+      "as": "Total_Crimes_Num"
+    },
+    {
+      "calculate": "display_metric == 'Population' ? datum.Population : toNumber(datum.Total_Crimes_Num)",
+      "as": "DisplayValue"
     }
   ],
   "projection": {"type": "mercator"},
-  "mark": {
-    "type": "geoshape",
-    "stroke": null
-  },
+  "mark": {"type": "geoshape", "stroke": null},
   "encoding": {
     "color": {
-      "field": "Population",
+      "field": "DisplayValue",
       "type": "quantitative",
-      "scale": {"scheme": "blues"},
-      "legend": {"title": "Total Population"}
+      "scale": {
+        "scheme": {"signal": "display_metric == 'Population' ? 'blues' : 'reds'"}
+      },
+      "legend": {
+        "title": {
+          "signal": "display_metric == 'Population' ? 'State Population' : 'State Crimes'"
+        },
+        "titleLimit": 0,
+        "labelLimit": 0,
+        "symbolLimit": 1000,
+        "columns": 1,
+        "orient": "right"
+      }
     },
     "tooltip": [
-      {"title": "State Name", "field": "properties.STE_NAME21", "type": "nominal"},
-      {"title": "State Code", "field": "properties.STE_CODE21", "type": "nominal"},
+      {"title": "State", "field": "properties.STE_NAME21"},
       {"title": "Population", "field": "Population", "type": "quantitative", "format": ","},
+      {"title": "Total Crimes", "field": "Total_Crimes_Num", "type": "quantitative", "format": ","},
       {"title": "Male Population", "field": "Male_Population", "type": "quantitative", "format": ","},
       {"title": "Female Population", "field": "Female_Population", "type": "quantitative", "format": ","}
     ]
-  }
+  },
+  "config": {"view": {"stroke": "transparent"}}
 }

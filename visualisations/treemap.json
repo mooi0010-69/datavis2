@@ -1,0 +1,160 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v6.json",
+  "description": "treemap of australian state crimes with filters",
+  "width": 960,
+  "height": 500,
+  "padding": 2.5,
+  "autosize": "none",
+
+  "signals": [
+    {
+      "name": "layout",
+      "value": "squarify",
+      "bind": {
+        "name": "treemap layout", // label for dropdown control
+        "input": "select", // dropdown input
+        "options": ["squarify", "binary", "slicedice"] // treemap layout options
+      }
+    },
+    {
+      "name": "aspectRatio",
+      "value": 1.6,
+      "bind": {
+        "name": "aspect ratio", // label for range control
+        "input": "range", // slider input
+        "min": 1, // min slider value
+        "max": 5, // max slider value
+        "step": 0.1 // step size for slider
+      }
+    },
+    {
+      "name": "state_select",
+      "value": "All",
+      "bind": {
+        "name": "select state", // label for state filter
+        "input": "select", // dropdown input
+        "options": ["All","New South Wales","Victoria","Queensland","South Australia","Western Australia","Tasmania","Northern Territory","Australian Capital Territory"] // list of states
+      }
+    },
+    {
+      "name": "offence_select",
+      "value": "All",
+      "bind": {
+        "name": "select offence", // label for offence filter
+        "input": "select", // dropdown input
+        "options": [ // list of offence categories
+          "All",
+          "Homicide and related offences",
+          "Acts intended to cause injury",
+          "Sexual assault and related offences",
+          "Dangerous/negligent acts",
+          "Abduction/harassment",
+          "Robbery/extortion",
+          "Unlawful entry with intent",
+          "Theft",
+          "Fare evasion",
+          "Fraud/deception",
+          "Illicit drug offences",
+          "Weapons/explosives",
+          "Property damage and environmental pollution",
+          "Public order offences",
+          "Offences against justice",
+          "Miscellaneous offences"
+        ]
+      }
+    }
+  ],
+
+  "data": [
+    {
+      "name": "tree",
+      "url": "https://raw.githubusercontent.com/mooi0010-69/datavis2/refs/heads/main/cleaned_data/states_crime_hier.csv",
+      "format": {"type": "csv"}, // data is in csv format
+      "transform": [
+        {
+          "type": "stratify",
+          "key": "id", // unique identifier for each node
+          "parentKey": "parent" // parent relationship for hierarchy
+        },
+        {
+          "type": "treemap",
+          "field": "value", // size of each rectangle
+          "sort": {"field": "value"}, // sort by value
+          "round": true, // round coordinates
+          "method": {"signal": "layout"}, // treemap layout method (from signal)
+          "ratio": {"signal": "aspectRatio"}, // aspect ratio of layout (from signal)
+          "size": [{"signal": "width"}, {"signal": "height"}] // size of treemap
+        }
+      ]
+    },
+    {
+      "name": "nodes",
+      "source": "tree",
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "datum.children && (state_select == 'All' || datum.name == state_select)" 
+          // filter only parent nodes (states) and selected state
+        }
+      ]
+    },
+    {
+      "name": "leaves",
+      "source": "tree",
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "!datum.children && (state_select == 'All' || datum.parent == state_select) && (offence_select == 'All' || indexof(datum.id, offence_select) >= 0)"
+          // filter only leaf nodes (offences) and selected state/offence
+        }
+      ]
+    }
+  ],
+
+  "scales": [
+    {
+      "name": "color",
+      "type": "ordinal",
+      "domain": ["New South Wales","Victoria","Queensland","South Australia","Western Australia","Tasmania","Northern Territory","Australian Capital Territory"],
+      "range": ["#1f77b4","#ff7f0e","#2ca02c","#d62728","#9467bd","#8c564b","#e377c2","#7f7f7f"]
+      // assign color to each state
+    }
+  ],
+
+  "marks": [
+    {
+      "type": "rect",
+      "from": {"data": "nodes"},
+      "interactive": false,
+      "encode": {
+        "enter": {"fill": {"scale": "color", "field": "name"}}, // fill parent rectangles with color
+        "update": {
+          "x": {"field": "x0"},
+          "y": {"field": "y0"},
+          "x2": {"field": "x1"},
+          "y2": {"field": "y1"} // position and size of parent rectangles
+        }
+      }
+    },
+    {
+      "type": "rect",
+      "from": {"data": "leaves"},
+      "encode": {
+        "enter": {"stroke": {"value": "#fff"}}, // white border for leaves
+        "update": {
+          "x": {"field": "x0"},
+          "y": {"field": "y0"},
+          "x2": {"field": "x1"},
+          "y2": {"field": "y1"},
+          "fill": {"scale": "color", "field": "parent"} // fill leaf by parent color
+        },
+        "hover": {
+          "tooltip": {
+            "signal": "{'State': datum.parent, 'Offence': replace(datum.id, / \\(.*\\)$/, ''), 'Count': datum.value}" 
+            // show tooltip with state, offence and count
+          }
+        }
+      }
+    }
+  ]
+}

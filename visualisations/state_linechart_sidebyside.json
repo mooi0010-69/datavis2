@@ -1,0 +1,37 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Multi-line chart of crimes by age group for each state and gender with tooltips",
+  "width": 800,
+  "height": 500,
+  "data": {
+    "url": "https://raw.githubusercontent.com/mooi0010-69/datavis2/refs/heads/main/cleaned_data/cleaned_combined_gender_age_crime.csv"
+  },
+  "params": [
+    {
+      "name": "gender_select",
+      "value": "Male",
+      "bind": {
+        "input": "select",
+        "options": ["Male", "Female"],
+        "name": "Filter Gender"
+      }
+    }
+  ],
+  "transform": [
+    {
+      "filter": "datum.Gender == gender_select"
+    }
+  ],
+  "mark": {"type": "line", "point": true},
+  "encoding": {
+    "x": {"field": "Age", "type": "ordinal", "title": "Age Group"},
+    "y": {"field": "Crimes", "type": "quantitative", "title": "Number of Crimes"},
+    "color": {"field": "State", "type": "nominal", "title": "State"},
+    "tooltip": [
+      {"field": "State", "type": "nominal"},
+      {"field": "Age", "type": "ordinal"},
+      {"field": "Gender", "type": "nominal"},
+      {"field": "Crimes", "type": "quantitative"}
+    ]
+  }
+}

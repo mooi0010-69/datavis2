@@ -1,0 +1,81 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Grouped bar chart comparing male and female crimes by age group, selectable by state, with gender filter.",
+  "title": {
+    "text": "Comparison of Male and Female Crimes by Age Group and State (Australia)",
+    "anchor": "start",
+    "fontSize": 18,
+    "fontWeight": "bold"
+  },
+  "width": 600,
+  "height": 400,
+  "data": {
+    "url": "https://raw.githubusercontent.com/mooi0010-69/datavis2/refs/heads/main/cleaned_data/cleaned_combined_gender_age_crime.csv"
+  },
+  "params": [
+    {
+      "name": "state_select",
+      "value": "New South Wales",
+      "bind": {
+        "input": "select",
+        "options": [
+          "New South Wales",
+          "Victoria",
+          "Queensland",
+          "South Australia",
+          "Western Australia",
+          "Tasmania",
+          "Northern Territory",
+          "Australian Capital Territory"
+        ],
+        "name": "Select State: "
+      }
+    },
+    {
+      "name": "gender_select",
+      "value": "Both",
+      "bind": {
+        "input": "select",
+        "options": ["Both", "Male", "Female"],
+        "name": "Filter Gender: "
+      }
+    }
+  ],
+  "transform": [
+    {
+      "filter": "datum.State == state_select"
+    },
+    {
+      "filter": "gender_select == 'Both' || datum.Gender == gender_select"
+    }
+  ],
+  "mark": {"type": "bar", "cornerRadiusTopLeft": 3, "cornerRadiusTopRight": 3},
+  "encoding": {
+    "x": {
+      "field": "Age",
+      "type": "ordinal",
+      "title": "Age Group",
+      "axis": {"labelAngle": -30}
+    },
+    "y": {
+      "aggregate": "sum",
+      "field": "Crimes",
+      "title": "Number of Crimes"
+    },
+    "color": {
+      "field": "Gender",
+      "type": "nominal",
+      "scale": {
+        "domain": ["Female", "Male"],
+        "range": ["#FBB4B4", "#9DCAEB"]
+      },
+      "legend": {"title": "Gender"}
+    },
+    "tooltip": [
+      {"field": "State", "type": "nominal"},
+      {"field": "Age", "type": "nominal"},
+      {"field": "Gender", "type": "nominal"},
+      {"field": "Crimes", "type": "quantitative", "title": "Number of Crimes", "format": ","}
+    ]
+  }
+}

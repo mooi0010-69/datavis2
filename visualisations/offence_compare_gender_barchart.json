@@ -1,0 +1,85 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Stacked bar chart comparing male and female offences by state, selectable by offence, with gender filter and full state names.",
+  "title": {
+    "text": "Comparison of Male and Female Offences by State",
+    "anchor": "start",
+    "fontSize": 18,
+    "fontWeight": "bold"
+  },
+  "width": 700,
+  "height": 500,
+  "data": {
+    "url": "https://raw.githubusercontent.com/mooi0010-69/datavis2/refs/heads/main/cleaned_data/states_crime_gender/states_crime_long_cleaned.csv"
+  },
+  "params": [
+    {
+      "name": "offence_select",
+      "value": "Theft",
+      "bind": {
+        "input": "select",
+        "options": [
+          "Homicide and related offences",
+          "Acts intended to cause injury",
+          "Sexual assault and related offences",
+          "Dangerous/negligent acts",
+          "Abduction/harassment",
+          "Robbery/extortion",
+          "Unlawful entry with intent",
+          "Theft",
+          "Fare evasion",
+          "Fraud/deception",
+          "Illicit drug offences",
+          "Weapons/explosives",
+          "Property damage and environmental pollution",
+          "Public order offences",
+          "Offences against justice",
+          "Miscellaneous offences"
+        ],
+        "name": "Select Offence: "
+      }
+    },
+    {
+      "name": "gender_select",
+      "value": "Both",
+      "bind": {
+        "input": "select",
+        "options": ["Both", "Male", "Female"],
+        "name": "Filter Gender: "
+      }
+    }
+  ],
+  "transform": [
+    {"filter": "datum.State != 'total'"},
+    {"filter": "datum.Offences == offence_select"},
+    {"filter": "gender_select == 'Both' || datum.Gender == gender_select"},
+    {
+      "calculate": "datum.State == 'cap' ? 'Australian Capital Territory' : datum.State == 'north' ? 'Northern Territory' : datum.State == 'nsw' ? 'New South Wales' : datum.State == 'queens' ? 'Queensland' : datum.State == 'south' ? 'South Australia' : datum.State == 'tas' ? 'Tasmania' : datum.State == 'vic' ? 'Victoria' : datum.State == 'west' ? 'Western Australia' : datum.State",
+      "as": "State_Full"
+    }
+  ],
+  "mark": {"type": "bar", "cornerRadiusTopLeft": 3, "cornerRadiusTopRight": 3},
+  "encoding": {
+    "x": {
+      "field": "State_Full",
+      "type": "ordinal",
+      "title": "State"
+    },
+    "y": {
+      "aggregate": "sum",
+      "field": "Count",
+      "title": "Number of Offences"
+    },
+    "color": {
+      "field": "Gender",
+      "type": "nominal",
+      "scale": {"domain": ["Female", "Male"], "range": ["#FBB4B4", "#9DCAEB"]},
+      "legend": {"title": "Gender"}
+    },
+    "tooltip": [
+      {"field": "State_Full", "type": "nominal", "title": "State"},
+      {"field": "Gender", "type": "nominal"},
+      {"field": "Count", "type": "quantitative", "title": "Number of Offences", "format": ","}
+    ]
+  }
+}
