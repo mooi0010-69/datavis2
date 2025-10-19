@@ -33,7 +33,7 @@
       "bind": {
         "name": "select state", 
         "input": "select",
-        "options": ["All","New South Wales","Victoria","Queensland","South Australia","Western Australia","Tasmania","Northern Territory","Australian Capital Territory"] // list of states
+        "options": ["All","New South Wales","Victoria","Queensland","South Australia","Western Australia","Tasmania","Northern Territory","Australian Capital Territory"] 
       }
     },
     {
@@ -158,5 +158,6 @@
     }
   ]
 }
+
 
 
