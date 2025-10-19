@@ -20,7 +20,7 @@
       "color": {
         "condition": {
           "test": "datum.Crimes_Num == 0",
-          "value": "#ffffff"   //0 to white
+          "value": "#ffffff"  
         },
         "field": "Crimes_Num",
         "type": "quantitative",
@@ -37,3 +37,4 @@
       ]
     }
   }
+
