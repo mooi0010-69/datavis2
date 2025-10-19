@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Multi-line chart of crimes by age group for each state and gender with tooltips",
-  "width": 800,
-  "height": 500,
+  "width": 400,
+  "height": 400,
   "data": {
     "url": "https://raw.githubusercontent.com/mooi0010-69/datavis2/refs/heads/main/cleaned_data/cleaned_combined_gender_age_crime.csv"
   },
@@ -61,3 +61,4 @@
     ]
   }
 }
+
