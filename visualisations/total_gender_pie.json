@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "Pie chart showing gender distribution of crimes in Australia with percentage tooltip and custom colors",
+  "description": "Pie chart showing gender distribution of crimes in Australia with percentage tooltip",
   "width": 400,
   "height": 400,
   "data": {
@@ -41,3 +41,4 @@
   },
   "view": {"stroke": null}
 }
+
