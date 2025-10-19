@@ -7,8 +7,8 @@
     "fontSize": 18,
     "fontWeight": "bold"
   },
-  "width": 600,
-  "height": 400,
+  "width": 400,
+  "height": 300,
   "data": {
     "url": "https://raw.githubusercontent.com/mooi0010-69/datavis2/refs/heads/main/cleaned_data/cleaned_combined_gender_age_crime.csv"
   },
@@ -79,3 +79,4 @@
     ]
   }
 }
+
