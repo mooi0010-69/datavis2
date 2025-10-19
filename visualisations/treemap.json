@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega/v6.json",
   "description": "treemap of australian state crimes with filters",
-  "width": 960,
-  "height": 500,
+  "width": 860,
+  "height": 400,
   "padding": 2.5,
   "autosize": "none",
 
@@ -158,4 +158,5 @@
     }
   ]
 }
+
 
