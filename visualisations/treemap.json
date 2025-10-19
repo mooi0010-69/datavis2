@@ -116,8 +116,8 @@
       "name": "color",
       "type": "ordinal",
       "domain": ["New South Wales","Victoria","Queensland","South Australia","Western Australia","Tasmania","Northern Territory","Australian Capital Territory"],
-      "range": ["#1f77b4","#ff7f0e","#2ca02c","#d62728","#9467bd","#8c564b","#e377c2","#7f7f7f"]
-      // assign color to each state
+      "range": ["#8D99AE",  "#EF476F", "#9B59B6",  "#06D6A0","#FFD166", "#073B79", "#F77FBE", "#3A86FF"   
+]
     }
   ],
 

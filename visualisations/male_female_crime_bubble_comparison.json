@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Bubble chart: x=male population, y=female population, size=total crimes, color=state",
-  "width": 800,
+  "width": 500,
   "height": 600,
   "data": {
     "url": "https://raw.githubusercontent.com/mooi0010-69/datavis2/refs/heads/main/cleaned_data/male_pop_state.csv"
@@ -50,7 +50,33 @@
       "title": "Total Crimes",
       "scale": {"range": [100, 2000]}
     },
-    "color": {"field": "State", "type": "nominal", "legend": {"title": "State"}},
+    "color": {
+      "field": "State",
+      "type": "nominal",
+      "legend": {"title": "State"},
+      "scale": {
+        "domain": [
+          "New South Wales",
+          "Victoria",
+          "Queensland",
+          "South Australia",
+          "Western Australia",
+          "Tasmania",
+          "Northern Territory",
+          "Australian Capital Territory"
+        ],
+        "range": [
+          "#8D99AE",
+          "#EF476F",
+          "#9B59B6",
+          "#06D6A0",
+          "#FFD166",
+          "#073B79",
+          "#F77FBE",
+          "#3A86FF"
+        ]
+      }
+    },
     "tooltip": [
       {"field": "State", "type": "nominal"},
       {"field": "Male_Population_Num", "type": "quantitative"},

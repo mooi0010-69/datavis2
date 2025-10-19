@@ -32,7 +32,7 @@
       "lookup": "properties.STE_CODE21",
       "from": {
         "data": {
-          "url": "https://raw.githubusercontent.com/mooi0010-69/datavis2/refs/heads/main/cleaned_data/female_population.csv"
+          "url": "https://raw.githubusercontent.com/mooi0010-69/datavis2/refs/heads/main/cleaned_data/female_pop_state.csv"
         },
         "key": "STATE_CODE",
         "fields": ["Female_Population"]
@@ -42,7 +42,7 @@
       "lookup": "properties.STE_CODE21",
       "from": {
         "data": {
-          "url": "https://raw.githubusercontent.com/mooi0010-69/datavis2/refs/heads/main/cleaned_data/male_pop.csv"
+          "url": "https://raw.githubusercontent.com/mooi0010-69/datavis2/refs/heads/main/cleaned_data/male_pop_state.csv"
         },
         "key": "STATE_CODE",
         "fields": ["Male_Population"]

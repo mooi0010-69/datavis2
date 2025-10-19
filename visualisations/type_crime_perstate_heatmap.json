@@ -1,39 +1,39 @@
-{
-  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "data": {
-    "url": "https://raw.githubusercontent.com/mooi0010-69/datavis2/refs/heads/main/cleaned_data/states_crime.csv"
-  },
-  "transform": [
-    {
-      "fold": ["New South Wales","Victoria","Queensland","South Australia","Western Australia","Tasmania","Northern Territory","Australian Capital Territory"], 
-      "as": ["State", "Crimes"]
+  {
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+      "url": "https://raw.githubusercontent.com/mooi0010-69/datavis2/refs/heads/main/cleaned_data/states_crime.csv"
     },
-    {
-      "calculate": "toNumber(replace(datum.Crimes, ',', ''))",
-      "as": "Crimes_Num"
+    "transform": [
+      {
+        "fold": ["New South Wales","Victoria","Queensland","South Australia","Western Australia","Tasmania","Northern Territory","Australian Capital Territory"], 
+        "as": ["State", "Crimes"]
+      },
+      {
+        "calculate": "toNumber(replace(datum.Crimes, ',', ''))",
+        "as": "Crimes_Num"
+      }
+    ],
+    "mark": "rect",
+    "encoding": {
+      "x": {"field": "State", "type": "nominal", "title": "State"},
+      "y": {"field": "Principal offence", "type": "nominal", "title": "Principal Offence"},
+      "color": {
+        "condition": {
+          "test": "datum.Crimes_Num == 0",
+          "value": "#ffffff"   //0 to white
+        },
+        "field": "Crimes_Num",
+        "type": "quantitative",
+        "scale": {
+          "domain": [1, 15000, 38500],
+          "range": ["#ffffff","#0e0000"] 
+        },
+        "title": "Num of Crimes"
+      },
+      "tooltip": [
+        {"field": "Principal offence"},
+        {"field": "State"},
+        {"field": "Crimes_Num", "type": "quantitative", "format": ","}
+      ]
     }
-  ],
-  "mark": "rect",
-  "encoding": {
-    "x": {"field": "State", "type": "nominal", "title": "State"},
-    "y": {"field": "Principal offence", "type": "nominal", "title": "Principal Offence"},
-    "color": {
-      "condition": {
-        "test": "datum.Crimes_Num == 0",
-        "value": "#ffffff"   //0 to white
-      },
-      "field": "Crimes_Num",
-      "type": "quantitative",
-      "scale": {
-        "domain": [1, 15000, 38500],
-        "range": ["#ffffff","#0e0000"] 
-      },
-      "title": "Num of Crimes"
-    },
-    "tooltip": [
-      {"field": "Principal offence"},
-      {"field": "State"},
-      {"field": "Crimes_Num", "type": "quantitative", "format": ","}
-    ]
   }
-}
