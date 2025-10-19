@@ -52,7 +52,7 @@
       "type": "quantitative",
       "scale": {
         "domain": [1, 15000, 38500],
-        "range": ["#ffffff","#03081a"]
+        "range": ["#ffffff", "#344678", "#03081a"]
       },
       "title": "Num of Crimes"
     },
