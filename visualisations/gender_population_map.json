@@ -1,5 +1,12 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Australian States: Population and Crimes",
+    "anchor": "start",
+    "fontSize": 20,
+    "fontWeight": "bold",
+    "dy": -10
+  },
   "width": 800,
   "height": 800,
   "data": {
@@ -12,7 +19,7 @@
       "value": "Population",
       "bind": {
         "input": "select",
-        "options": ["Population", "total crimes"],
+        "options": ["Population", "Total crimes"],
         "name": "Select Metric: "
       }
     }
