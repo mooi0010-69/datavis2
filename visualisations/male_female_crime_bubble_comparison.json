@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Bubble chart: x=male population, y=female population, size=total crimes, color=state",
-  "width": 500,
-  "height": 600,
+  "width": 300,
+  "height": 400,
   "data": {
     "url": "https://raw.githubusercontent.com/mooi0010-69/datavis2/refs/heads/main/cleaned_data/male_pop_state.csv"
   },
@@ -85,3 +85,4 @@
     ]
   }
 }
+
