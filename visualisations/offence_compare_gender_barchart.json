@@ -7,8 +7,8 @@
     "fontSize": 18,
     "fontWeight": "bold"
   },
-  "width": 700,
-  "height": 500,
+  "width": 400,
+  "height": 300,
   "data": {
     "url": "https://raw.githubusercontent.com/mooi0010-69/datavis2/refs/heads/main/cleaned_data/states_crime_gender/states_crime_long_cleaned.csv"
   },
@@ -83,3 +83,4 @@
     ]
   }
 }
+
