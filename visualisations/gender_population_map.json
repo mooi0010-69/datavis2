@@ -89,7 +89,6 @@
         },
         "titleLimit": 0,
         "labelLimit": 0,
-        "symbolLimit": 1000,
         "columns": 1,
         "orient": "right"
       }
@@ -104,4 +103,5 @@
   },
   "config": {"view": {"stroke": "transparent"}}
 }
+
 
