@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega/v6.json",
-  "description": "treemap of australian state crimes with filters",
+  "description": "treemap of australian state crimes with filters and annotation",
   "width": 860,
   "height": 400,
   "padding": 2.5,
@@ -11,38 +11,38 @@
       "name": "layout",
       "value": "squarify",
       "bind": {
-        "name": "treemap layout", 
-        "input": "select", 
-        "options": ["squarify", "binary", "slicedice"] 
+        "name": "Treemap Layout:  ",
+        "input": "select",
+        "options": ["squarify", "binary", "slicedice"]
       }
     },
     {
       "name": "aspectRatio",
       "value": 1.6,
       "bind": {
-        "name": "aspect ratio", 
-        "input": "range", 
-        "min": 1, 
-        "max": 5, 
-        "step": 0.1 
+        "name": "Aspect Ratio:  ",
+        "input": "range",
+        "min": 1,
+        "max": 5,
+        "step": 0.1
       }
     },
     {
       "name": "state_select",
       "value": "All",
       "bind": {
-        "name": "select state", 
+        "name": "Select State:  ",
         "input": "select",
-        "options": ["All","New South Wales","Victoria","Queensland","South Australia","Western Australia","Tasmania","Northern Territory","Australian Capital Territory"] 
+        "options": ["All","New South Wales","Victoria","Queensland","South Australia","Western Australia","Tasmania","Northern Territory","Australian Capital Territory"]
       }
     },
     {
       "name": "offence_select",
       "value": "All",
       "bind": {
-        "name": "select offence",
-        "input": "select", 
-        "options": [ 
+        "name": "Select Offence:  ",
+        "input": "select",
+        "options": [
           "All",
           "Homicide and related offences",
           "Acts intended to cause injury",
@@ -69,21 +69,21 @@
     {
       "name": "tree",
       "url": "https://raw.githubusercontent.com/mooi0010-69/datavis2/refs/heads/main/cleaned_data/states_crime_hier.csv",
-      "format": {"type": "csv"}, 
+      "format": {"type": "csv"},
       "transform": [
         {
           "type": "stratify",
-          "key": "id", 
-          "parentKey": "parent" 
+          "key": "id",
+          "parentKey": "parent"
         },
         {
           "type": "treemap",
           "field": "value",
-          "sort": {"field": "value"}, 
-          "round": true, 
-          "method": {"signal": "layout"}, 
-          "ratio": {"signal": "aspectRatio"}, 
-          "size": [{"signal": "width"}, {"signal": "height"}] 
+          "sort": {"field": "value"},
+          "round": true,
+          "method": {"signal": "layout"},
+          "ratio": {"signal": "aspectRatio"},
+          "size": [{"signal": "width"}, {"signal": "height"}]
         }
       ]
     },
@@ -93,7 +93,7 @@
       "transform": [
         {
           "type": "filter",
-          "expr": "datum.children && (state_select == 'All' || datum.name == state_select)" 
+          "expr": "datum.children && (state_select == 'All' || datum.name == state_select)"
         }
       ]
     },
@@ -104,6 +104,16 @@
         {
           "type": "filter",
           "expr": "!datum.children && (state_select == 'All' || datum.parent == state_select) && (offence_select == 'All' || indexof(datum.id, offence_select) >= 0)"
+        }
+      ]
+    },
+    {
+      "name": "leaves_ns",
+      "source": "leaves",
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "datum.parent == 'New South Wales' && datum.id == 'Acts intended to cause injury'"
         }
       ]
     }
@@ -134,12 +144,12 @@
       "from": {"data": "nodes"},
       "interactive": false,
       "encode": {
-        "enter": {"fill": {"scale": "color", "field": "name"}}, 
+        "enter": {"fill": {"scale": "color", "field": "name"}},
         "update": {
           "x": {"field": "x0"},
           "y": {"field": "y0"},
           "x2": {"field": "x1"},
-          "y2": {"field": "y1"} 
+          "y2": {"field": "y1"}
         }
       }
     },
@@ -147,20 +157,21 @@
       "type": "rect",
       "from": {"data": "leaves"},
       "encode": {
-        "enter": {"stroke": {"value": "#fff"}}, 
+        "enter": {"stroke": {"value": "#fff"}},
         "update": {
           "x": {"field": "x0"},
           "y": {"field": "y0"},
           "x2": {"field": "x1"},
           "y2": {"field": "y1"},
-          "fill": {"scale": "color", "field": "parent"} 
+          "fill": {"scale": "color", "field": "parent"}
         },
         "hover": {
           "tooltip": {
-            "signal": "{'State': datum.parent, 'Offence': replace(datum.id, / \\(.*\\)$/, ''), 'Count': datum.value}" 
+            "signal": "{'State': datum.parent, 'Offence': replace(datum.id, / \\(.*\\)$/, ''), 'Count': datum.value}"
           }
         }
       }
-    }
+    },
+
   ]
 }
