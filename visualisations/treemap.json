@@ -11,7 +11,7 @@
       "name": "layout",
       "value": "squarify",
       "bind": {
-        "name": "Treemap Layout:",
+        "name": "Treemap Layout: ",
         "input": "select",
         "options": ["squarify", "binary", "slicedice"]
       }
@@ -20,7 +20,7 @@
       "name": "aspectRatio",
       "value": 1.6,
       "bind": {
-        "name": "Aspect Ratio:",
+        "name": "Aspect Ratio: ",
         "input": "range",
         "min": 1,
         "max": 5,
@@ -31,7 +31,7 @@
       "name": "state_select",
       "value": "All",
       "bind": {
-        "name": "Select State:",
+        "name": "Select State: ",
         "input": "select",
         "options": ["All","New South Wales","Victoria","Queensland","South Australia","Western Australia","Tasmania","Northern Territory","Australian Capital Territory"]
       }
@@ -40,7 +40,7 @@
       "name": "offence_select",
       "value": "All",
       "bind": {
-        "name": "Select Offence:",
+        "name": "Select Offence: ",
         "input": "select",
         "options": [
           "All",
@@ -160,3 +160,4 @@
     }
   ]
 }
+
