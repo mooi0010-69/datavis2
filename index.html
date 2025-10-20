@@ -101,7 +101,7 @@
 
     /*only treemap*/
     .treemap-container {
-      width: 875px;
+      width: 950px;
       margin: 0 auto;
       background: #ffffff; 
       box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
@@ -109,7 +109,7 @@
       transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
-    .treemap-container:hover {
+    .treemap-container:hover {  
       transform: translateY(-2px);
       box-shadow: 0 5px 12px rgba(0, 0, 0, 0.12);
     }
@@ -347,22 +347,30 @@
   </div>
   <div class="spacer"></div>
 
-  <!-- Section 5: Treemap -->
-  <h3 id="treemap">Treemap: Crimes by State & Category</h3>
+<!-- Section 5: Treemap -->
+<h3 id="treemap">Treemap: Crimes by State & Category</h3>
 
-  <div class="grid">
-    <div class="text-cell">
-      <p>This treemap shows crime counts per state by category. Use it to see which offences dominate each state and compare totals visually.</p>
+<div class="text-cell" style="width: 100%; margin-bottom: 20px;">
+  <p>
+    This treemap shows crime counts per state by category. Use it to see which offences dominate each state and compare totals visually.
+  </p>
+</div>
+
+<div class="treemap-grid" style="display: flex; flex-direction: column; gap: 10px; align-items: flex-start;">
+
+  <div class="chart-cell" style="flex: 0 0 auto;">
+    <div class="treemap-container">
+      <div id="chart5"></div>
     </div>
   </div>
 
-  <div class="grid">
-    <div class="chart-cell">
-      <div class="treemap-container">
-        <div id="chart5"></div>
-      </div>
-    </div>
+  <div class="treemap-image" style="flex: 0 0 auto;">
+    <img src="https://raw.githubusercontent.com/mooi0010-69/datavis2/main/decorations/Treemap_legend.png" 
+         alt="Treemap Legend" 
+         style="width: 150px; height: auto; border-radius: 6px;">
   </div>
+
+</div>
 
 
   <div class="spacer"></div>
