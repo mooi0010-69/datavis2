@@ -4,13 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Crimes and Population in Australia (2024)</title>
+
   <!-- Vega & Vega-Lite -->
   <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+
   <style>
     body, h1, h2, h3, p {
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: 'Montserrat', Arial, Helvetica, sans-serif;
     }
     body {
       background-color: #c3effa;
@@ -23,14 +25,17 @@
     .container {
       max-width: 1000px;
       padding: 20px;
-      background-color: #ffffff;
+      background-color: #f8fcff;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       margin: 40px 0;
       border-radius: 8px;
     }
+
     h1, h2, h3 {
       text-align: left;
       margin: 0 0 10px 0;
+      color: #004d73;
+      font-weight: 700;
     }
     p.description {
       text-align: left;
@@ -41,16 +46,18 @@
     p {
       text-align: left;
       font-size: 14px;
-      color: #222222;
+      color: #333333;
+      line-height: 1.6;
       margin-bottom: 30px;
     }
+
+    /*header*/
     .grid_top {
       display: grid;
       grid-template-columns: 1fr auto;
       align-items: center;
       gap: 20px;
     }
-    /* for header */
     .grid_top h1 {
       white-space: nowrap;
       font-size: 45px;
@@ -61,22 +68,20 @@
       justify-self: end;
       padding-top: 10px;
     }
+
+    /*grid*/
     .grid {
       display: grid;
       grid-template-columns: 30% 70%;
       gap: 20px;
       align-items: start;
     }
-    .spacer {
-      height: 50px;
-    }
-    /*text in grid*/
     .text-cell {
       font-size: 14px;
       color: #333;
       text-align: left;
+      position: relative;
     }
-    /*visualisations are aligned center*/
     .chart-cell {
       text-align: center;
     }
@@ -84,12 +89,82 @@
       width: 100%;
       max-width: 600px;
       margin: 0 auto;
+      background: #ffffff; 
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
+      padding: 10px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
+    .chart:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 12px rgba(0, 0, 0, 0.12);
+    }
+
+    /*only treemap*/
+    .treemap-container {
+      width: 875px;
+      margin: 0 auto;
+      background: #ffffff; 
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
+      padding: 10px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .treemap-container:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 12px rgba(0, 0, 0, 0.12);
+    }
+
+    #chart5 {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /*only heatmp */
+    .chart-container {
+      width: 100%;
+      max-width: 600px;  
+      margin: 0 auto;
+      background: #ffffff; 
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
+      padding: 10px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .chart-container:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 12px rgba(0, 0, 0, 0.12);
+    }
+
+    #chart4 {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .chart.no-hover {
+      background: none;
+      border: none;
+      box-shadow: none;
+      padding: 0;
+      transition: none;
+    }
+
+    .chart.no-hover:hover {
+      transform: none;
+      box-shadow: none;
+    }
+
+
     #map {
       max-width: 800px;
     }
 
-    /*navigation button css*/
+    .spacer {
+      height: 50px;
+    }
+
+    /*nav buttons */
     .nav-buttons {
       display: flex;
       justify-content: center;
@@ -97,18 +172,61 @@
       margin: 40px 0;
     }
     .nav-btn {
-      background-color: #0077b6;
-      color: white;
+      background: linear-gradient(135deg, #0077b6, #0096c7);
+      color: #fff;
       border: none;
-      padding: 10px 25px;
-      border-radius: 6px;
+      padding: 12px 30px;
+      border-radius: 8px;
       cursor: pointer;
       font-size: 16px;
-      transition: background-color 0.3s ease;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      transition: all 0.3s ease;
+      box-shadow: 0 3px 8px rgba(0, 119, 182, 0.3);
     }
     .nav-btn:hover {
-      background-color: #005f8a;
+      background: linear-gradient(135deg, #005f8a, #0081a7);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 14px rgba(0, 95, 138, 0.35);
     }
+    .nav-btn:active {
+      transform: translateY(0);
+      box-shadow: 0 2px 5px rgba(0, 95, 138, 0.2);
+    }
+
+    /*vegalite filters*/
+    .vega-bindings {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-bottom: 10px;
+    }
+    .vega-bind label {
+      font-size: 15px;
+      font-weight: 500;
+      color: #004d73;
+      margin-right: 6px;
+    }
+    .vega-bind select {
+      background-color: #ffffff;
+      color: #222;
+      border: 1.5px solid #0077b6;
+      border-radius: 6px;
+      padding: 6px 10px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .vega-bind select:hover,
+    .vega-bind select:focus {
+      border-color: #005f8a;
+      box-shadow: 0 0 4px rgba(0, 95, 138, 0.3);
+      outline: none;
+    }
+
+    /*to make it responsive*/
     @media (max-width: 900px) {
       .grid, .grid_top {
         grid-template-columns: 1fr;
@@ -123,18 +241,17 @@
     }
   </style>
 </head>
-<body>
 
+<body>
 <div class="container">
 
   <!-- Title + Image -->
   <div class="grid_top">
     <h1>Crimes and Population in Australia (2024)</h1>
-    <img src="https://raw.githubusercontent.com/mooi0010-69/datavis2/main/decorations/img2.png" 
-         alt="Decoration">
+    <img src="https://raw.githubusercontent.com/mooi0010-69/datavis2/main/decorations/img2.png" alt="Decoration">
   </div>
 
-  <!-- Description below -->
+  <!-- Description -->
   <div class="grid_top">
     <p class="description">
       An overview of crime distribution and population by state, gender, and age group in Australia.
@@ -144,7 +261,7 @@
   <!-- Section 1: Map -->
   <h2 id="map">Overview Map</h2>
   <div class="grid">
-    <div class="text-cell" style="position: relative;">
+    <div class="text-cell">
       <p>
         Provides a spatial overview of Australia. Quickly see which states have higher populations or crime numbers. Use the dropdown to toggle metrics between total population and total crimes.
       </p>
@@ -156,52 +273,39 @@
   </div>
 
   <div class="spacer"></div>
-
   <div class="nav-buttons">
     <button class="nav-btn" onclick="scrollToSection('gender')">Next ↓</button>
   </div>
-
   <div class="spacer"></div>
 
-<!-- Section 2: Gender Analysis -->
-<h2 id="gender">Gender Analysis</h2>
-
-<div class="grid" style="grid-template-columns: 1fr 1fr; align-items: start;">
-  <div class="text-cell" style="position: relative;">
-    <p>
-      Comparison of crimes committed by males and females across states and offences. 
-      This comparison shows the proportion and count of male vs female offenders across various crime categories and states.
-      more description more description more description more description more description more description 
-      more description more description more description more description more description more description 
-      more description more description more description more description more description more description 
-    </p>
-    <!-- piechart below text but adjusted with relative location -->
-    <div class="chart-cell" style="position: relative; top: -10px; left: -25px;">
-      <div id="chart1" class="chart"></div>
+  <!-- Section 2: Gender Analysis -->
+  <h2 id="gender">Gender Analysis</h2>
+  <div class="grid" style="grid-template-columns: 1fr 1fr; align-items: start;">
+    <div class="text-cell">
+      <p>
+        Comparison of crimes committed by males and females across states and offences. 
+        This comparison shows the proportion and count of male vs female offenders across various crime categories and states.
+      </p>
+      <div class="chart-cell" style="position: relative; top: -10px; left: -2px;">
+        <div id="chart1" class="chart"></div>
+      </div>
     </div>
+    <div class="chart-cell"><div id="chart2" class="chart"></div></div>
   </div>
 
-  <div class="chart-cell">
-    <div id="chart2" class="chart"></div>
+  <div class="spacer"></div>
+  <div class="nav-buttons">
+    <button class="nav-btn" onclick="scrollToSection('map')">↑ Previous</button>
+    <button class="nav-btn" onclick="scrollToSection('age')">Next ↓</button>
   </div>
-</div>
-
-<div class="spacer"></div>
-
-<div class="nav-buttons">
-  <button class="nav-btn" onclick="scrollToSection('map')">↑ Previous</button>
-  <button class="nav-btn" onclick="scrollToSection('age')">Next ↓</button>
-</div>
-
-<div class="spacer"></div>
-
+  <div class="spacer"></div>
 
   <!-- Section 3: Age Analysis -->
   <h2 id="age">Age Analysis</h2>
   <p>Age analysis description.</p>
   <div class="grid" style="grid-template-columns: 60% 40%; align-items: start;">
     <div class="chart-cell"><div id="chart3" class="chart"></div></div>
-    <div class="text-cell" style="max-width: 300px; position: relative;">
+    <div class="text-cell" style="max-width: 300px;">
       <p>
         This chart shows the distribution of crimes by age group for both males and females. 
         It helps identify which age groups are most involved in or affected by crimes across Australia.
@@ -213,55 +317,59 @@
   </div>
 
   <div class="spacer"></div>
-
   <div class="nav-buttons">
     <button class="nav-btn" onclick="scrollToSection('gender')">↑ Previous</button>
     <button class="nav-btn" onclick="scrollToSection('summary')">Next ↓</button>
   </div>
-
   <div class="spacer"></div>
 
-  <!-- Section 4: Types of Crime/Summary View-->
-  <h2 id="summary">Types of Crime</h2>
-  <p>description</p>
-  <div class="grid">
-    <div class="text-cell" style="position: relative;">
-      <p>
-        description<br>
-        continuation of desc
-      </p>
-      <img src="https://raw.githubusercontent.com/mooi0010-69/datavis2/main/decorations/img4.png"
-           alt="Decoration"
-           style="position: absolute; top: 400px; left: 0; max-height: 150px; width: auto;">
-    </div>
-    <div class="chart-cell"><div id="chart4" class="chart"></div></div>
+<!-- Section 4: Types of Crime -->
+<h2 id="summary">Types of Crime</h2>
+<p>description</p>
+<div class="grid">
+  <div class="text-cell">
+    <p>description<br>continuation of desc</p>
+    <img src="https://raw.githubusercontent.com/mooi0010-69/datavis2/main/decorations/img4.png"
+         alt="Decoration"
+         style="position: absolute; top: 400px; left: 0; max-height: 150px; width: auto;">
   </div>
+  <div class="chart-cell">
+    <div class="chart-container">
+      <div id="chart4"></div>
+    </div>
+  </div>
+</div>
 
   <div class="spacer"></div>
-
   <div class="nav-buttons">
     <button class="nav-btn" onclick="scrollToSection('age')">↑ Previous</button>
     <button class="nav-btn" onclick="scrollToSection('treemap')">Next ↓</button>
   </div>
-
   <div class="spacer"></div>
 
   <!-- Section 5: Treemap -->
   <h3 id="treemap">Treemap: Crimes by State & Category</h3>
+
   <div class="grid">
-    <div class="chart-cell"><div id="chart5" class="chart"></div></div>
     <div class="text-cell">
       <p>This treemap shows crime counts per state by category. Use it to see which offences dominate each state and compare totals visually.</p>
     </div>
   </div>
 
-  <div class="spacer"></div>
+  <div class="grid">
+    <div class="chart-cell">
+      <div class="treemap-container">
+        <div id="chart5"></div>
+      </div>
+    </div>
+  </div>
 
+
+  <div class="spacer"></div>
   <div class="nav-buttons">
     <button class="nav-btn" onclick="scrollToSection('summary')">↑ Previous</button>
     <button class="nav-btn" onclick="scrollToSection('map')">Back to Top ↑</button>
   </div>
-
   <div class="spacer"></div>
 
 </div>
@@ -269,12 +377,10 @@
 <script>
 function scrollToSection(id) {
   const section = document.getElementById(id);
-  if (section) {
-    section.scrollIntoView({ behavior: 'smooth' });
-  }
+  if (section) section.scrollIntoView({ behavior: 'smooth' });
 }
 
-// Vega-Lite embeds
+// --- Vega-Lite embeds ---
 vegaEmbed('#mapChart', 'https://raw.githubusercontent.com/mooi0010-69/datavis2/refs/heads/main/visualisations/gender_population_map.json', { actions: false }).catch(console.error);
 vegaEmbed('#chart1', 'https://raw.githubusercontent.com/mooi0010-69/datavis2/refs/heads/main/visualisations/total_gender_pie.json', { actions: false }).catch(console.error);
 vegaEmbed('#chart2', 'https://raw.githubusercontent.com/mooi0010-69/datavis2/refs/heads/main/visualisations/offence_compare_gender_barchart.json', { actions: false }).catch(console.error);
@@ -282,6 +388,5 @@ vegaEmbed('#chart3', 'https://raw.githubusercontent.com/mooi0010-69/datavis2/ref
 vegaEmbed('#chart4', 'https://raw.githubusercontent.com/mooi0010-69/datavis2/refs/heads/main/visualisations/type_crime_perstate_heatmap.json', { actions: false }).catch(console.error);
 vegaEmbed('#chart5', 'https://raw.githubusercontent.com/mooi0010-69/datavis2/refs/heads/main/visualisations/treemap.json', { actions: false }).catch(console.error);
 </script>
-
 </body>
 </html>
