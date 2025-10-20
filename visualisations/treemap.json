@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega/v6.json",
-  "description": "treemap of australian state crimes with filters and annotation",
+  "description": "treemap of australian state crimes with filters",
   "width": 860,
   "height": 400,
   "padding": 2.5,
@@ -71,11 +71,7 @@
       "url": "https://raw.githubusercontent.com/mooi0010-69/datavis2/refs/heads/main/cleaned_data/states_crime_hier.csv",
       "format": {"type": "csv"},
       "transform": [
-        {
-          "type": "stratify",
-          "key": "id",
-          "parentKey": "parent"
-        },
+        {"type": "stratify","key": "id","parentKey": "parent"},
         {
           "type": "treemap",
           "field": "value",
@@ -104,16 +100,6 @@
         {
           "type": "filter",
           "expr": "!datum.children && (state_select == 'All' || datum.parent == state_select) && (offence_select == 'All' || indexof(datum.id, offence_select) >= 0)"
-        }
-      ]
-    },
-    {
-      "name": "leaves_ns",
-      "source": "leaves",
-      "transform": [
-        {
-          "type": "filter",
-          "expr": "datum.parent == 'New South Wales' && datum.id == 'Acts intended to cause injury'"
         }
       ]
     }
@@ -171,7 +157,6 @@
           }
         }
       }
-    },
-
+    }
   ]
 }
