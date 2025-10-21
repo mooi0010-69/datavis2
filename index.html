@@ -253,7 +253,7 @@
   <div class="grid_top">
     <p class="description">
     This is an overview of crime distribution and population by state, gender, age group, and crime type in Australia in 2024. 
-    The dashboard is organized into several sections. Use the Next button to proceed to the following section, 
+    The dashboard is organized into several sections with buttons for easy navigation. Use the Next button to proceed to the following section, 
     or the Previous button to return to the earlier section.
     </p>
 
@@ -418,7 +418,8 @@
 
 <div class="text-cell" style="width: 100%; margin-bottom: 20px;">
 <p> This treemap shows crime counts per state by category and can be filtered by state and offence. It makes 
-  comparing individual offences between states clearer than the heatmap by showing the composition of crimes within each state. 
+  comparing individual offences between states clearer than the heatmap by showing the mix of crimes within each state. State and crime can be filtered. 
+  The treemap can be viewed differently with the aspect ratio and layout setting.
   Queensland has the most offences against justice, likely due to its larger population and urban centers. 
   The least common crimes are homicide, dangerous/negligent acts, and robbery, reflecting that these offences occur less frequently overall. 
  </p>
@@ -452,7 +453,7 @@
 <script>
 function scrollToSection(id) {
   const section = document.getElementById(id);
-  if (section) section.scrollIntoView({ behavior: 'smooth' });
+  if (section) section.scrollIntoView({ behavior: 'smooth' });  
 }
 
 // --- Vega-Lite embeds ---
