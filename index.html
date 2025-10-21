@@ -283,9 +283,45 @@
 
   <div class="spacer"></div>
   <div class="nav-buttons">
-    <button class="nav-btn" onclick="scrollToSection('gender')">Next ↓</button>
+    <button class="nav-btn" onclick="scrollToSection('population')">Next ↓</button>
   </div>
   <div class="spacer"></div>
+
+  <!-- Section 1.5: Population vs Crime Relationship -->
+<h2 id="population">Population and Crime Relationship</h2>
+<div class="grid">
+  <div class="text-cell">
+    <p>
+      This bubble chart shows the relationship between a state's population and total crimes. 
+      Each bubble represents a state, with larger bubbles indicating higher populations. 
+      You can zoom in and out to explore smaller values. Double click resets the view.
+    </p>
+
+    <p>
+      The chart gives greater emphasis and clarity on the correlations between population and crime compared to the map. 
+      Victoria, despite being the second most populous state, has fewer crimes than Queensland. 
+      Similarly, Tasmania has more people than Northern Territory but records fewer crimes.
+    </p>
+
+    <p>
+      Key insight: Larger populations generally correspond to higher crime counts, though social and economic factors also play a role.
+    </p>
+
+
+
+  </div>
+  <div class="chart-cell">
+    <div id="bubbleChart" class="chart"></div>
+  </div>
+</div>
+
+<div class="spacer"></div>
+<div class="nav-buttons">
+  <button class="nav-btn" onclick="scrollToSection('map')">↑ Previous</button>
+  <button class="nav-btn" onclick="scrollToSection('gender')">Next ↓</button>
+</div>
+<div class="spacer"></div>
+
 
   <!-- Section 2: Gender Analysis -->
   <h2 id="gender">Gender Analysis</h2>
@@ -334,7 +370,7 @@
 
   <div class="spacer"></div>
   <div class="nav-buttons">
-    <button class="nav-btn" onclick="scrollToSection('map')">↑ Previous</button>
+    <button class="nav-btn" onclick="scrollToSection('population')">↑ Previous</button>
     <button class="nav-btn" onclick="scrollToSection('age')">Next ↓</button>
   </div>
   <div class="spacer"></div>
@@ -458,6 +494,7 @@ function scrollToSection(id) {
 
 // --- Vega-Lite embeds ---
 vegaEmbed('#mapChart', 'https://raw.githubusercontent.com/mooi0010-69/datavis2/refs/heads/main/visualisations/gender_population_map.json', { actions: false }).catch(console.error);
+vegaEmbed('#bubbleChart', 'https://raw.githubusercontent.com/mooi0010-69/datavis2/refs/heads/main/visualisations/compare_population_crime.json', { actions: false }).catch(console.error);
 vegaEmbed('#chart1', 'https://raw.githubusercontent.com/mooi0010-69/datavis2/refs/heads/main/visualisations/total_gender_pie.json', { actions: false }).catch(console.error);
 vegaEmbed('#chart2', 'https://raw.githubusercontent.com/mooi0010-69/datavis2/refs/heads/main/visualisations/offence_compare_gender_barchart.json', { actions: false }).catch(console.error);
 vegaEmbed('#chart3', 'https://raw.githubusercontent.com/mooi0010-69/datavis2/refs/heads/main/visualisations/gender_crime_age.json', { actions: false }).catch(console.error);
