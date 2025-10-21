@@ -29,6 +29,10 @@
     {
       "calculate": "toNumber(replace(datum.Population, ',', ''))",
       "as": "Population_Num"
+    },
+    {
+      "calculate": "datum.Total_Crimes_Num / datum.Population_Num",
+      "as": "Crime_Density"
     }
   ],
   "mark": {"type": "circle", "opacity": 0.8, "stroke": "#333", "strokeWidth": 1},
@@ -38,18 +42,14 @@
       "type": "quantitative",
       "title": "Total Crimes",
       "axis": {"grid": true},
-      "scale":{
-        "domain": [0, 125000]
-      }
+      "scale": {"domain": [0, 125000]}
     },
     "y": {
       "field": "Population_Num",
       "type": "quantitative",
       "title": "Population",
       "axis": {"grid": true},
-      "scale":{
-        "domain": [0, 9100000]
-      }
+      "scale": {"domain": [0, 9100000]}
     },
     "size": {
       "field": "Population_Num",
@@ -58,22 +58,26 @@
       "legend": {"title": "Population Size"}
     },
     "color": {
-      "field": "Total_Crimes_Num",
+      "field": "Crime_Density",
       "type": "quantitative",
-      "scale": {"scheme": "reds"},
-      "legend": {"title": "Total Crimes"}
-    },
+      "scale": {
+        "scheme": "reds",
+        "domain": [0, 0.03]   
+      },
+  "legend": {"title": "Crime Density (per person)"}
+},
     "tooltip": [
       {"field": "State", "type": "nominal"},
       {"field": "Population_Num", "title": "Population", "type": "quantitative", "format": ","},
-      {"field": "Total_Crimes_Num", "title": "Total Crimes", "type": "quantitative", "format": ","}
+      {"field": "Total_Crimes_Num", "title": "Total Crimes", "type": "quantitative", "format": ","},
+      {"field": "Crime_Density", "title": "Crime Density", "type": "quantitative", "format": ".5f"}
     ]
   },
   "params": [
     {
       "name": "zoom",
       "select": "interval",
-      "bind": "scales"   
+      "bind": "scales"
     }
   ],
   "config": {
