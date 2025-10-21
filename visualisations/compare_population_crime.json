@@ -6,8 +6,8 @@
     "fontSize": 18,
     "fontWeight": "bold"
   },
-  "width": 400,
-  "height": 450,
+  "width": 300,
+  "height": 375,
   "data": {
     "url": "https://raw.githubusercontent.com/mooi0010-69/datavis2/refs/heads/main/cleaned_data/total_pop.csv"
   },
@@ -48,7 +48,7 @@
     "size": {
       "field": "Population_Num",
       "type": "quantitative",
-      "scale": {"range": [100, 2000]},
+      "scale": {"range": [50, 1500]},
       "legend": {"title": "Population Size"}
     },
     "color": {
