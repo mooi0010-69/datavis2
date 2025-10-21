@@ -1,0 +1,64 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Distribution of Crimes by Gender",
+    "fontSize": 18,
+    "fontWeight": "bold",
+    "anchor": "middle"
+  },
+  "width": 200,
+  "height": 300,
+  "data": {
+    "url": "https://raw.githubusercontent.com/mooi0010-69/datavis2/refs/heads/main/cleaned_data/states_crime_gender/merged_type_gender_sum.csv",
+    "format": {"type": "csv"}
+  },
+  "transform": [
+    {
+      "fold": ["Male", "Female"],
+      "as": ["Gender", "Count"]
+    },
+    {
+      "filter": "genderFilter == 'All' ? true : datum.Gender == genderFilter"
+    }
+  ],
+  "params": [
+    {
+      "name": "genderFilter",
+      "value": "All",
+      "bind": {
+        "input": "select",
+        "name": "Select Gender: ",
+        "options": ["All", "Male", "Female"]
+      }
+    }
+  ],
+  "mark": {
+    "type": "arc",
+    "tooltip": true
+  },
+  "encoding": {
+    "theta": {"field": "Count", "type": "quantitative"},
+    "color": {
+      "field": "Gender",
+      "type": "nominal",
+      "scale": {
+        "domain": ["Male", "Female"],
+        "range": ["#9DCAEB", "#FF746C"]
+      }
+    },
+    "opacity": {
+      "field": "Count",
+      "type": "quantitative",
+      "scale": {
+        "domain": [0, 136382],
+        "range": [0.4, 1]
+      }
+    },
+    "tooltip": [
+      {"field": "Offences  ", "type": "nominal", "title": "Offence"},
+      {"field": "Gender", "type": "nominal", "title": "Gender"},
+      {"field": "Count", "type": "quantitative", "title": "Count"}
+    ]
+  },
+  "view": {"stroke": null}
+}
