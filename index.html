@@ -252,8 +252,11 @@
 
   <div class="grid_top">
     <p class="description">
-      An overview of crime distribution and population by state, gender, and age group in Australia.
+    This is an overview of crime distribution and population by state, gender, age group, and crime type in Australia in 2024. 
+    The dashboard is organized into several sections. Use the Next button to proceed to the following section, 
+    or the Previous button to return to the earlier section.
     </p>
+
   </div>
 
   <!-- Section 1: Map -->
@@ -261,11 +264,19 @@
   <div class="grid">
     <div class="text-cell">
       <p>
-        Provides a spatial overview of Australia. Quickly see which states have higher populations or crime numbers. Use the dropdown to toggle metrics between total population and total crimes.
+          This map shows Australia's state population and crime counts. Use the dropdown to switch between total population and total crimes per state. 
+          Hovering the map shows tooltips that provides details on population, crime counts, and gender distribution. The gender distribution across states is fairly even. 
+          The visualisation highlights possible correlations between population and crime.
       </p>
+
+      <p>New South Wales, the most populated state, also has the most crimes. 
+        Victoria, the second most populated, has fewer crimes than Queensland, the third most populated. </p>
+
+      <p>The key insight is that population alone does not determine crime frequenc and that other factors are involved.</p>
+
       <img src="https://raw.githubusercontent.com/mooi0010-69/datavis2/main/decorations/img1.png"
            alt="Decoration"
-           style="position: absolute; top: 300px; left: 0; max-height: 150px; width: auto;">
+           style="position: absolute; top: 470px; left: 0; max-height: 150px; width: auto;">
     </div>
     <div class="chart-cell"><div id="mapChart" class="chart"></div></div>
   </div>
@@ -280,9 +291,13 @@
   <h2 id="gender">Gender Analysis</h2>
   <div class="grid" style="grid-template-columns: 1fr 1fr; align-items: start;">
     <div class="text-cell">
+      <p>  The pie chart shows the overall distribution of crimes by gender in Australia, revealing that most crimes in 2024 were committed by men. 
+        The bar chart compares male and female offenders across states and crime categories, highlighting which states have the most offences in each category. 
+        Dropdown filters allow you to view specific crimes by gender or both. 
+      </p>
       <p>
-        Comparison of crimes committed by males and females across states and offences. 
-        This comparison shows the proportion and count of male vs female offenders across various crime categories and states.
+          New South Wales, Queensland, and Victoria have the highest number of offenders. 
+          Overall, men committed about three times more crimes than women in 2024.
       </p>
       <div class="chart-cell" style="position: relative; top: -10px; left: -2px;">
         <div id="chart1" class="chart"></div>
@@ -290,6 +305,32 @@
     </div>
     <div class="chart-cell"><div id="chart2" class="chart"></div></div>
   </div>
+
+<div class="grid" style="grid-template-columns: 43% 45%; align-items: start; gap: 20px;">
+  
+  <div class="chart-cell">
+    <div id="chart6" class="chart"></div>
+  </div>
+
+  <div class="text-cell">
+    <p>
+      This second pie chart provides a more detailed breakdown of crimes by gender for specific crime types or categories. 
+      You can use it to compare how the gender distribution varies across different offences in Australia. 
+      The purpose of this pie chart is to show which offence types are most frequent for each gender, shown by opacity. Hovering over the chart provides tooltips with more information on each crime.
+    </p>
+    <p>
+      Most crimes in Australia are committed by men, with "Acts intended to cause injury" being the most common offence for both genders. 
+      For women, the next most frequent offences are Theft and Illicit Drug Offences, while for men, they are Illicit Drug Offences and Offences Against Justice. 
+    </p>
+
+    <p>
+      This highlights that while the types of offences differ slightly by gender, violent and drug-related crimes are highest in the overall crime distribution.
+    </p>
+
+  </div>
+
+</div>
+
 
   <div class="spacer"></div>
   <div class="nav-buttons">
@@ -304,13 +345,25 @@
   <div class="grid" style="grid-template-columns: 60% 40%; align-items: start;">
     <div class="chart-cell"><div id="chart3" class="chart"></div></div>
     <div class="text-cell" style="max-width: 300px;">
-      <p>
-        This chart shows the distribution of crimes by age group for both males and females. 
-        It helps identify which age groups are most involved in or affected by crimes across Australia.
-      </p>
+    <p>
+      This chart shows the distribution of crimes by age group for both males and females. 
+      It helps identify which age groups are most involved in or affected by crimes across Australia.
+      This can be filtered by state and gender with the dropdowns.
+    </p>
+
+    <p>
+      Most crimes are committed by individuals aged 20-39 years, with the peak age group being 20-24 years across most states.
+    </p>
+
+    <p>
+      The key insight is that Younger adults (20-24) are the most active in committing crimes overall. Men tend to have the highest involvement in the 20-30 age range, 
+      whereas women's involvement peaks slightly older, around 30-39 years, highlighting subtle gender differences in age-related crime patterns.
+    </p>
+
+
       <img src="https://raw.githubusercontent.com/mooi0010-69/datavis2/main/decorations/img3.png" 
            alt="Decoration" 
-           style="position: absolute; top: 300px; right: 0; max-height: 150px; width: auto;">
+           style="position: absolute; top: 460px; right: 0; max-height: 150px; width: auto;">
     </div>
   </div>
 
@@ -323,13 +376,28 @@
 
 <!-- Section 4: Types of Crime -->
 <h2 id="summary">Types of Crime</h2>
-<p>description</p>
 <div class="grid">
   <div class="text-cell">
-    <p>description<br>continuation of desc</p>
+    <p>
+      The heatmap shows the number of crimes per state across different categories, with darker colors indicating higher counts. 
+      The treemap breaks this down further: each colored rectangle represents a state, and the smaller boxes show crime types sized by count. 
+      While the heatmap highlights comparisons between states and categories, the treemap emphasizes the distribution of crimes within each state.
+    </p>
+
+    <p>
+      Some states have very high crime counts, so the heatmap uses an adjusted color scale to make lighter values easier to see. Zero values remain white. 
+    </p>
+
+    <p>
+    Key insights: Sydney has the highest overall crime, while the Australian Capital Territory has the least. Acts intended to cause injury are common in Sydney, Queensland, and Victoria 
+    due to larger populations. Sydney's high fare evasion is linked to its extensive public transport network, and Queensland records the most illicit drug offences, 
+    likely influenced by its location for coastal drug trafficking.
+      </p>
+
+
     <img src="https://raw.githubusercontent.com/mooi0010-69/datavis2/main/decorations/img4.png"
          alt="Decoration"
-         style="position: absolute; top: 400px; left: 0; max-height: 150px; width: auto;">
+         style="position: absolute; top: 600px; left: 0; max-height: 150px; width: auto;">
   </div>
   <div class="chart-cell">
     <div class="chart-container">
@@ -349,9 +417,11 @@
 <h3 id="treemap">Treemap: Crimes by State & Category</h3>
 
 <div class="text-cell" style="width: 100%; margin-bottom: 20px;">
-  <p>
-    This treemap shows crime counts per state by category. Use it to see which offences dominate each state and compare totals visually.
-  </p>
+<p> This treemap shows crime counts per state by category and can be filtered by state and offence. It makes 
+  comparing individual offences between states clearer than the heatmap by showing the composition of crimes within each state. 
+  Queensland has the most offences against justice, likely due to its larger population and urban centers. 
+  The least common crimes are homicide, dangerous/negligent acts, and robbery, reflecting that these offences occur less frequently overall. 
+ </p>
 </div>
 
 <div class="treemap-grid" style="display: flex; flex-direction: column; gap: 10px; align-items: flex-start;">
@@ -392,6 +462,8 @@ vegaEmbed('#chart2', 'https://raw.githubusercontent.com/mooi0010-69/datavis2/ref
 vegaEmbed('#chart3', 'https://raw.githubusercontent.com/mooi0010-69/datavis2/refs/heads/main/visualisations/gender_crime_age.json', { actions: false }).catch(console.error);
 vegaEmbed('#chart4', 'https://raw.githubusercontent.com/mooi0010-69/datavis2/refs/heads/main/visualisations/type_crime_perstate_heatmap.json', { actions: false }).catch(console.error);
 vegaEmbed('#chart5', 'https://raw.githubusercontent.com/mooi0010-69/datavis2/refs/heads/main/visualisations/treemap.json', { actions: false }).catch(console.error);
+vegaEmbed('#chart6', 'https://raw.githubusercontent.com/mooi0010-69/datavis2/refs/heads/main/visualisations/pie2.json', { actions: false }).catch(console.error);
+
 </script>
 </body>
 </html>
