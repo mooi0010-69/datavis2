@@ -58,9 +58,10 @@
       "legend": {"title": "Population Size"}
     },
     "color": {
-      "field": "State",
-      "type": "nominal",
-      "legend": {"title": "State"}
+      "field": "Total_Crimes_Num",
+      "type": "quantitative",
+      "scale": {"scheme": "reds"},
+      "legend": {"title": "Total Crimes"}
     },
     "tooltip": [
       {"field": "State", "type": "nominal"},
