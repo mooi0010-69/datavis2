@@ -1,5 +1,11 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Gender Distribution of Crimes in Australia",
+    "fontSize": 16,
+    "fontWeight": "bold",
+    "anchor": "middle"
+  },
   "description": "Pie chart showing gender distribution of crimes in Australia with percentage tooltip and annotation",
   "width": 200,
   "height": 300,
@@ -60,4 +66,3 @@
   ],
   "view": {"stroke": null}
 }
-
