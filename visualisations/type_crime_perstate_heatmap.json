@@ -59,8 +59,7 @@
     "tooltip": [
       {"field": "Principal offence"},
       {"field": "State"},
-      {"field": "Crimes_Num", "type": "quantitative", "format": ","}
+      {"field": "Crimes_Num", "type": "quantitative", "format": ",","title": "Number of Crimes"}
     ]
   }
 }
-
