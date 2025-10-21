@@ -6,7 +6,7 @@
     "fontSize": 18,
     "fontWeight": "bold"
   },
-  "width": 600,
+  "width": 400,
   "height": 450,
   "data": {
     "url": "https://raw.githubusercontent.com/mooi0010-69/datavis2/refs/heads/main/cleaned_data/total_pop.csv"
