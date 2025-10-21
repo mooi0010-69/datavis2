@@ -1,0 +1,69 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Relationship Between Population and Total Crimes by State",
+    "anchor": "start",
+    "fontSize": 18,
+    "fontWeight": "bold"
+  },
+  "width": 600,
+  "height": 450,
+  "data": {
+    "url": "https://raw.githubusercontent.com/mooi0010-69/datavis2/refs/heads/main/cleaned_data/total_pop.csv"
+  },
+  "transform": [
+    {
+      "lookup": "State",
+      "from": {
+        "data": {
+          "url": "https://raw.githubusercontent.com/mooi0010-69/datavis2/refs/heads/main/cleaned_data/state_total_crime.csv"
+        },
+        "key": "State",
+        "fields": ["total crimes"]
+      }
+    },
+    {
+      "calculate": "toNumber(replace(datum['total crimes'], ',', ''))",
+      "as": "Total_Crimes_Num"
+    },
+    {
+      "calculate": "toNumber(replace(datum.Population, ',', ''))",
+      "as": "Population_Num"
+    }
+  ],
+  "mark": {"type": "circle", "opacity": 0.8, "stroke": "#333", "strokeWidth": 1},
+  "encoding": {
+    "x": {
+      "field": "Total_Crimes_Num",
+      "type": "quantitative",
+      "title": "Total Crimes",
+      "axis": {"grid": true}
+    },
+    "y": {
+      "field": "Population_Num",
+      "type": "quantitative",
+      "title": "Population",
+      "axis": {"grid": true}
+    },
+    "size": {
+      "field": "Population_Num",
+      "type": "quantitative",
+      "scale": {"range": [100, 2000]},
+      "legend": {"title": "Population Size"}
+    },
+    "color": {
+      "field": "State",
+      "type": "nominal",
+      "legend": {"title": "State"}
+    },
+    "tooltip": [
+      {"field": "State", "type": "nominal"},
+      {"field": "Population_Num", "title": "Population", "type": "quantitative", "format": ","},
+      {"field": "Total_Crimes_Num", "title": "Total Crimes", "type": "quantitative", "format": ","}
+    ]
+  },
+  "config": {
+    "view": {"stroke": "transparent"},
+    "axis": {"labelFontSize": 12, "titleFontSize": 13}
+  }
+}
