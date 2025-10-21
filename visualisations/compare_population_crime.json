@@ -37,13 +37,19 @@
       "field": "Total_Crimes_Num",
       "type": "quantitative",
       "title": "Total Crimes",
-      "axis": {"grid": true}
+      "axis": {"grid": true},
+      "scale":{
+        "domain": [0, 125000]
+      }
     },
     "y": {
       "field": "Population_Num",
       "type": "quantitative",
       "title": "Population",
-      "axis": {"grid": true}
+      "axis": {"grid": true},
+      "scale":{
+        "domain": [0, 9100000]
+      }
     },
     "size": {
       "field": "Population_Num",
@@ -62,6 +68,13 @@
       {"field": "Total_Crimes_Num", "title": "Total Crimes", "type": "quantitative", "format": ","}
     ]
   },
+  "params": [
+    {
+      "name": "zoom",
+      "select": "interval",
+      "bind": "scales"   
+    }
+  ],
   "config": {
     "view": {"stroke": "transparent"},
     "axis": {"labelFontSize": 12, "titleFontSize": 13}
